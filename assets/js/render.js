@@ -1,0 +1,134 @@
+/* ============================================================
+   Abdoulaye Diallo — rendu du contenu depuis /data/*.json
+   Permet à l'espace admin (/admin) de modifier le site
+   sans toucher au code HTML.
+   ============================================================ */
+
+async function loadJSON(path) {
+  try {
+    const res = await fetch(path, { cache: "no-store" });
+    if (!res.ok) throw new Error(res.status);
+    return await res.json();
+  } catch (e) {
+    console.warn("Impossible de charger", path, e);
+    return null;
+  }
+}
+
+function esc(str) {
+  const div = document.createElement("div");
+  div.textContent = str == null ? "" : str;
+  return div.innerHTML;
+}
+
+/* -------------------- Accueil -------------------- */
+async function renderSite() {
+  const data = await loadJSON("data/site.json");
+  if (!data) return;
+
+  const set = (id, html) => { const el = document.getElementById(id); if (el) el.innerHTML = html; };
+
+  set("hero-title", `${esc(data.title_line1)}<br><em>${esc(data.title_emphasis)}</em>`);
+  set("hero-dates", esc(data.dates));
+  set("hero-subtitle", esc(data.subtitle));
+
+  set("fact1-num", esc(data.fact1_num));
+  set("fact1-label", esc(data.fact1_label));
+  set("fact2-num", esc(data.fact2_num));
+  set("fact2-label", esc(data.fact2_label));
+  set("fact3-num", esc(data.fact3_num));
+  set("fact3-label", esc(data.fact3_label));
+
+  set("quote-text", `« ${esc(data.quote_text)} »`);
+  set("quote-cite", esc(data.quote_cite));
+  set("penc-text", esc(data.penc_text));
+}
+
+/* -------------------- Biographie -------------------- */
+async function renderBiographie() {
+  const data = await loadJSON("data/biographie.json");
+  if (!data) return;
+
+  const tl = document.getElementById("timeline");
+  if (tl && Array.isArray(data.timeline)) {
+    tl.innerHTML = data.timeline.map(item => `
+      <div class="tl-item">
+        <span class="tl-year">${esc(item.year)}</span>
+        <h3>${esc(item.title)}</h3>
+        <p>${esc(item.text)}</p>
+      </div>
+    `).join("");
+  }
+
+  const set = (id, html) => { const el = document.getElementById(id); if (el) el.innerHTML = html; };
+  set("penc-lede", esc(data.penc_lede));
+  set("penc-text-bio", esc(data.penc_text));
+  set("femme-text", esc(data.femme_text));
+
+  const biblio = document.getElementById("biblio");
+  if (biblio && Array.isArray(data.biblio)) {
+    biblio.innerHTML = data.biblio.map(item => `
+      <li>
+        <span class="biblio-mark">${item.year ? esc(item.year) : "—"}</span>
+        <span class="biblio-text">${esc(item.text)}</span>
+      </li>
+    `).join("");
+  }
+}
+
+/* -------------------- Œuvres -------------------- */
+async function renderOeuvres() {
+  const data = await loadJSON("data/oeuvres.json");
+  if (!data || !Array.isArray(data.artworks)) return;
+
+  const feature = document.getElementById("gallery-feature");
+  const rest = document.getElementById("gallery-rest");
+  if (!feature || !rest) return;
+
+  const cardHTML = (a) => {
+    const canvas = a.image
+      ? `<img src="${esc(a.image)}" alt="${esc(a.title)}">`
+      : "";
+    const paletteClass = a.image ? "" : `canvas-${esc(a.palette || "ochre")}`;
+    return `
+      <article class="artwork${a.wide ? " wide" : ""}">
+        <div class="artwork-canvas ${paletteClass}">${canvas}</div>
+        <div class="artwork-body">
+          <span class="tag">${esc(a.tag)}</span>
+          <h3>${esc(a.title)}</h3>
+          <p>${esc(a.description)}</p>
+        </div>
+      </article>
+    `;
+  };
+
+  const featured = data.artworks.filter(a => a.wide);
+  const others = data.artworks.filter(a => !a.wide);
+
+  feature.innerHTML = (featured.length ? featured : data.artworks.slice(0, 2)).map(cardHTML).join("");
+  rest.innerHTML = (featured.length ? others : data.artworks.slice(2)).map(cardHTML).join("");
+}
+
+/* -------------------- Vidéos -------------------- */
+async function renderVideos() {
+  const data = await loadJSON("data/videos.json");
+  if (!data || !Array.isArray(data.videos)) return;
+
+  const grid = document.getElementById("video-grid");
+  if (!grid) return;
+
+  grid.innerHTML = data.videos.map(v => {
+    const media = v.youtube_id
+      ? `<iframe class="video-frame" src="https://www.youtube.com/embed/${esc(v.youtube_id)}" title="${esc(v.title)}" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`
+      : `<div class="video-empty">Vidéo à venir<br>— ajoutez le lien depuis /admin —</div>`;
+    return `
+      <article class="video-card">
+        ${media}
+        <div class="video-body">
+          <h3>${esc(v.title)}</h3>
+          <p>${esc(v.description)}</p>
+        </div>
+      </article>
+    `;
+  }).join("");
+}

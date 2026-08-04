@@ -47,7 +47,7 @@
       <h2>Chronologie</h2>
     </div>
 
-    <div class="timeline">
+    <div class="timeline" id="timeline">
       <div class="tl-item">
         <span class="tl-year">25 décembre 1952</span>
         <h3>Naissance à Dakar</h3>
@@ -117,11 +117,11 @@
       <span class="eyebrow">Le Penc</span>
       <h2>Lieu de vie et de pensée</h2>
     </div>
-    <p class="lede">Sa maison-atelier, « Le Penc », sur la deuxième plage de l'île de Ngor, était entièrement dédiée à l'art — peinture, littérature, cinéma — et devenue un lieu incontournable pour les amateurs d'art.</p>
-    <p>Plus qu'un peintre, Diallo était considéré comme un sage, dont chaque parole invitait à la réflexion. La question « Quelle humanité pour demain ? » a hanté toute son œuvre.</p>
+    <p class="lede" id="penc-lede">Sa maison-atelier, « Le Penc », sur la deuxième plage de l'île de Ngor, était entièrement dédiée à l'art — peinture, littérature, cinéma — et devenue un lieu incontournable pour les amateurs d'art.</p>
+    <p id="penc-text-bio">Plus qu'un peintre, Diallo était considéré comme un sage, dont chaque parole invitait à la réflexion. La question « Quelle humanité pour demain ? » a hanté toute son œuvre.</p>
 
     <h3>La femme, muse centrale</h3>
-    <p>La figure féminine traverse une grande partie de son œuvre. Il défendait l'idée qu'investir dans l'éducation des enfants et dans la place de la femme était essentiel à l'avenir de la nation, la mère étant selon lui « au début et à la fin de tout ».</p>
+    <p id="femme-text">La figure féminine traverse une grande partie de son œuvre. Il défendait l'idée qu'investir dans l'éducation des enfants et dans la place de la femme était essentiel à l'avenir de la nation, la mère étant selon lui « au début et à la fin de tout ».</p>
   </div>
 </section>
 
@@ -132,7 +132,7 @@
       <h2>Œuvres publiées</h2>
       <p>Abdoulaye Diallo est l'auteur de plusieurs livres.</p>
     </div>
-    <ul class="biblio">
+    <ul class="biblio" id="biblio">
       <li>
         <span class="biblio-mark">—</span>
         <span class="biblio-text"><em>La fille du volcan : l'Île de Ngor</em>, préfacé par Abdoulaye Wade</span>
@@ -190,5 +190,7 @@
   </div>
 </footer>
 
+<script src="assets/js/render.js"></script>
+<script>renderBiographie();</script>
 </body>
 </html>

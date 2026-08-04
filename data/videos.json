@@ -1,0 +1,24 @@
+{
+  "videos": [
+    {
+      "youtube_id": "",
+      "title": "Entretien avec Abdoulaye Diallo",
+      "description": "Emplacement réservé pour une interview du Berger dans son atelier, Le Penc."
+    },
+    {
+      "youtube_id": "",
+      "title": "Reportage — l'île de Ngor",
+      "description": "Emplacement réservé pour un reportage sur l'île et son atelier."
+    },
+    {
+      "youtube_id": "",
+      "title": "Témoignage d'un proche",
+      "description": "Emplacement réservé pour un témoignage vidéo."
+    },
+    {
+      "youtube_id": "",
+      "title": "Exposition « Quelle humanité pour demain ? »",
+      "description": "Emplacement réservé pour des images de l'exposition de 2017 ou 2018."
+    }
+  ]
+}

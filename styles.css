@@ -377,6 +377,13 @@ section{ padding:88px 0; }
 .artwork-body h3{ color:var(--paper); font-size:1.2rem; margin:8px 0 6px; }
 .artwork-body p{ color:var(--sand-deep); font-size:.9rem; margin:0; }
 
+/* palette placeholders used when an artwork has no photo yet */
+.canvas-ochre{ background:linear-gradient(135deg, var(--ochre), #7A4A20 55%, var(--ocean)); }
+.canvas-coral{ background:linear-gradient(135deg, #7A2B22, var(--coral) 55%, var(--ocean-light)); }
+.canvas-teal{ background:linear-gradient(135deg, #1B5C50, var(--teal) 55%, var(--sand)); }
+.canvas-ocean{ background:linear-gradient(135deg, var(--ocean), var(--ocean-light) 55%, var(--coral)); }
+.artwork-canvas img{ width:100%; height:100%; object-fit:cover; }
+
 .note-box{
   margin-top:64px; padding:28px 30px;
   border:1px dashed var(--sand-deep);

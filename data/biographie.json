@@ -1,0 +1,68 @@
+{
+  "timeline": [
+    {
+      "year": "25 décembre 1952",
+      "title": "Naissance à Dakar",
+      "text": "Abdoulaye Diallo naît à Dakar. Il devient ingénieur ECE Paris, option électronique, spécialiste des télécommunications."
+    },
+    {
+      "year": "Carrière d'ingénieur",
+      "title": "Président d'un groupe de fibre optique",
+      "text": "Il dirige un groupe spécialisé dans la construction de réseaux à fibres optiques, avant de se tourner vers l'engagement associatif et, plus tard, vers l'art."
+    },
+    {
+      "year": "Depuis 2000",
+      "title": "Président de l'AAIN",
+      "text": "Il préside l'Association des Amis de l'île de Ngor (AAIN), de sa création en 2000 jusqu'en 2020. Il co-fonde également avec France Gall l'association « Les Amis de Ngor », engagée dans la lutte contre la prostitution sur l'île."
+    },
+    {
+      "year": "Depuis octobre 2010",
+      "title": "Secrétaire Général, Club Convergences Plurielles",
+      "text": "Il occupe également la fonction de Vice-président du Mouvement Alternative Citoyenne / ANDU-NAWLÉ."
+    },
+    {
+      "year": "30 décembre 2011",
+      "title": "Le tournant vers la peinture",
+      "text": "À 60 ans, après une brillante carrière d'ingénieur, le Berger découvre l'art plastique. Une vocation qui durera douze ans, jusqu'à sa disparition — consacrée notamment aux femmes et à de grandes figures mondiales comme Nelson Mandela ou Leo Frobenius."
+    },
+    {
+      "year": "2017",
+      "title": "« Quelle humanité pour demain ? » — l'île de Ngor",
+      "text": "Exposition marquante portée par une toile monumentale (7,9 m × 2,45 m) en triptyque : la mondialisation et ses conséquences climatiques, la colère face aux travers de l'humanité, puis une issue fondée sur la paix, le pardon et le partage — inspirée des frontons des universités musulmanes d'Espagne."
+    },
+    {
+      "year": "Mai–juillet 2018",
+      "title": "Bibliothèque universitaire Cheikh Anta Diop",
+      "text": "Exposition sous le thème « Quelle humanité pour demain ? », qui accueille 4 800 visiteurs, hors élèves et étudiants d'autres écoles."
+    },
+    {
+      "year": "2021",
+      "title": "Une série d'ouvrages chez L'Harmattan",
+      "text": "Coordonnés par les Pr Magueye Kassé et Pr Ibrahima Silla : « Quelle humanité pour demain ? », « Femmes — mères de l'humanité », « Les figures emblématiques des indépendances et de la démocratie sénégalaise », « L'Afrique face aux défis politiques, démocratiques et technologiques », « Art rupestre et contemporanéité »."
+    },
+    {
+      "year": "Mai 2022",
+      "title": "Biennale de Dakar — « I Ndaffa »",
+      "text": "Il présente quatre toiles dédiées à la femme et à la fille dans le cadre de l'exposition Taxawaalu, inspirée de l'histoire de la princesse peule Fatimata Baba Lobo, contée par la styliste Oumou Sy. Il y défend l'idée qu'investir dans l'éducation des enfants et la place de la femme est essentiel à l'avenir de la nation."
+    },
+    {
+      "year": "17 nov. 2023 – 20 mai 2024",
+      "title": "Musée de l'Homme, Paris",
+      "text": "Son œuvre Hommage à Frobenius 2 y est exposée aux côtés de créations de Jackson Pollock. C'est Leo Frobenius — auteur d'un recensement de 6 000 peintures rupestres à travers le monde — qui lui ouvre les portes de ce musée. Le Pr Magueye Kassé, commissaire permanent de l'artiste, y salue la reconnaissance de l'art africain et la manière dont Diallo prolonge le travail de Frobenius sur les liens millénaires entre l'Afrique et le monde à travers l'art rupestre."
+    }
+  ],
+  "penc_lede": "Sa maison-atelier, « Le Penc », sur la deuxième plage de l'île de Ngor, était entièrement dédiée à l'art — peinture, littérature, cinéma — et devenue un lieu incontournable pour les amateurs d'art.",
+  "penc_text": "Plus qu'un peintre, Diallo était considéré comme un sage, dont chaque parole invitait à la réflexion. La question « Quelle humanité pour demain ? » a hanté toute son œuvre.",
+  "femme_text": "La figure féminine traverse une grande partie de son œuvre. Il défendait l'idée qu'investir dans l'éducation des enfants et dans la place de la femme était essentiel à l'avenir de la nation, la mère étant selon lui « au début et à la fin de tout ».",
+  "biblio": [
+    { "year": "", "text": "La fille du volcan : l'Île de Ngor, préfacé par Abdoulaye Wade" },
+    { "year": "", "text": "La face cachée de notre démocratie, en hommage à Me Babacar Niang, préfacé par le Pr Amadou Mahtar Mbow, ancien Directeur Général de l'UNESCO" },
+    { "year": "", "text": "Changer de Regard" },
+    { "year": "", "text": "Sénégal 2012, le temps du peuple (octobre 2009)" },
+    { "year": "2021", "text": "Quelle humanité pour demain ? — L'Harmattan" },
+    { "year": "2021", "text": "Femmes — mères de l'humanité — L'Harmattan" },
+    { "year": "2021", "text": "Les figures emblématiques des indépendances et de la démocratie sénégalaise — L'Harmattan" },
+    { "year": "2021", "text": "L'Afrique face aux défis politiques, démocratiques et technologiques — L'Harmattan" },
+    { "year": "2021", "text": "Art rupestre et contemporanéité — L'Harmattan" }
+  ]
+}

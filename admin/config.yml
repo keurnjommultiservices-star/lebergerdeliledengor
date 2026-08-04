@@ -1,0 +1,105 @@
+backend:
+  name: git-gateway
+  branch: main
+
+# Où sont stockées les images ajoutées depuis l'admin
+media_folder: "assets/uploads"
+public_folder: "assets/uploads"
+
+locale: "fr"
+
+collections:
+
+  # ---------- Page d'accueil ----------
+  - name: "accueil"
+    label: "Accueil"
+    files:
+      - name: "accueil"
+        label: "Contenu de la page d'accueil"
+        file: "data/site.json"
+        fields:
+          - { label: "Titre — première ligne", name: "title_line1", widget: "string" }
+          - { label: "Titre — nom mis en valeur", name: "title_emphasis", widget: "string" }
+          - { label: "Dates / lieu (sous le titre)", name: "dates", widget: "string" }
+          - { label: "Texte d'introduction", name: "subtitle", widget: "text" }
+          - { label: "Chiffre clé 1", name: "fact1_num", widget: "string" }
+          - { label: "Légende du chiffre 1", name: "fact1_label", widget: "text" }
+          - { label: "Chiffre clé 2", name: "fact2_num", widget: "string" }
+          - { label: "Légende du chiffre 2", name: "fact2_label", widget: "text" }
+          - { label: "Chiffre clé 3", name: "fact3_num", widget: "string" }
+          - { label: "Légende du chiffre 3", name: "fact3_label", widget: "text" }
+          - { label: "Citation mise en avant", name: "quote_text", widget: "text" }
+          - { label: "Source de la citation", name: "quote_cite", widget: "string" }
+          - { label: "Texte — section Le Penc", name: "penc_text", widget: "text" }
+
+  # ---------- Biographie ----------
+  - name: "biographie"
+    label: "Biographie"
+    files:
+      - name: "biographie"
+        label: "Contenu de la page biographie"
+        file: "data/biographie.json"
+        fields:
+          - label: "Chronologie"
+            name: "timeline"
+            widget: "list"
+            summary: "{{year}} — {{title}}"
+            fields:
+              - { label: "Date / période", name: "year", widget: "string" }
+              - { label: "Titre de l'étape", name: "title", widget: "string" }
+              - { label: "Texte", name: "text", widget: "text" }
+          - { label: "Le Penc — chapô", name: "penc_lede", widget: "text" }
+          - { label: "Le Penc — texte", name: "penc_text", widget: "text" }
+          - { label: "La femme, muse centrale — texte", name: "femme_text", widget: "text" }
+          - label: "Bibliographie"
+            name: "biblio"
+            widget: "list"
+            summary: "{{text}}"
+            fields:
+              - { label: "Année (facultatif)", name: "year", widget: "string", required: false }
+              - { label: "Référence du livre", name: "text", widget: "string" }
+
+  # ---------- Œuvres ----------
+  - name: "oeuvres"
+    label: "Œuvres"
+    files:
+      - name: "oeuvres"
+        label: "Galerie des œuvres"
+        file: "data/oeuvres.json"
+        fields:
+          - label: "Œuvres"
+            name: "artworks"
+            widget: "list"
+            summary: "{{title}}"
+            fields:
+              - { label: "Étiquette (ex: 2017 · Triptyque)", name: "tag", widget: "string" }
+              - { label: "Titre de l'œuvre", name: "title", widget: "string" }
+              - { label: "Description", name: "description", widget: "text" }
+              - label: "Couleur de fond (si pas de photo)"
+                name: "palette"
+                widget: "select"
+                options: ["ochre", "coral", "teal", "ocean"]
+                default: "ochre"
+              - { label: "Grand format (occupe plus de place)", name: "wide", widget: "boolean", default: false, required: false }
+              - { label: "Photo de l'œuvre (facultatif)", name: "image", widget: "image", required: false }
+
+  # ---------- Vidéos ----------
+  - name: "videos"
+    label: "Vidéos"
+    files:
+      - name: "videos"
+        label: "Vidéos et interviews"
+        file: "data/videos.json"
+        fields:
+          - label: "Vidéos"
+            name: "videos"
+            widget: "list"
+            summary: "{{title}}"
+            fields:
+              - label: "Identifiant YouTube"
+                name: "youtube_id"
+                widget: "string"
+                required: false
+                hint: "La partie après 'v=' dans l'URL YouTube. Ex : https://www.youtube.com/watch?v=ABCD1234 → ABCD1234. Laissez vide si pas encore de vidéo."
+              - { label: "Titre", name: "title", widget: "string" }
+              - { label: "Description", name: "description", widget: "text" }
