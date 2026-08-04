@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vidéos & interviews — Abdoulaye Diallo</title>
+<meta name="description" content="Interviews, entretiens et témoignages vidéo autour d'Abdoulaye Diallo, le Berger de l'île de Ngor.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,500&family=Work+Sans:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<nav class="site-nav">
+  <div class="container">
+    <a href="index.html" class="brand">
+      <span class="brand-name">Abdoulaye Diallo</span>
+      <span class="brand-tag">Le Berger de l'île de Ngor</span>
+    </a>
+    <button class="nav-toggle" aria-label="Ouvrir le menu" aria-expanded="false" onclick="document.querySelector('.nav-links').classList.toggle('open'); this.setAttribute('aria-expanded', this.getAttribute('aria-expanded')==='false')">☰</button>
+    <ul class="nav-links">
+      <li><a href="index.html">Accueil</a></li>
+      <li><a href="biographie.html">Biographie</a></li>
+      <li><a href="oeuvres.html">Œuvres</a></li>
+      <li><a href="videos.html" class="active">Vidéos</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="hero" style="padding-bottom:0;">
+  <div class="container" style="grid-template-columns:1fr; text-align:center; padding-bottom:50px;">
+    <div>
+      <span class="eyebrow">Archives filmées</span>
+      <h1 style="font-size:clamp(2.2rem,4.6vw,3.4rem);">Vidéos & interviews</h1>
+      <p class="hero-sub" style="margin:0 auto;">Entretiens, reportages et témoignages filmés — pour entendre encore la voix du Berger de l'île de Ngor.</p>
+    </div>
+  </div>
+  <svg class="horizon-sun" viewBox="0 0 1180 90" width="100%" height="90" preserveAspectRatio="none" aria-hidden="true">
+    <path d="M0,78 C 200,55 380,90 600,60 C 820,30 980,88 1180,65 L1180,90 L0,90 Z" fill="#FBF6E9"></path>
+  </svg>
+</header>
+
+<section class="section-light">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">À venir</span>
+      <h2>Cette page attend ses vidéos</h2>
+      <p>Aucun lien YouTube n'a encore été ajouté. Ajoutez vos interviews ci-dessous pour qu'elles apparaissent ici.</p>
+    </div>
+
+    <div class="video-grid">
+
+      <!--
+        POUR AJOUTER UNE VIDÉO YOUTUBE :
+        Remplacez un bloc <div class="video-empty">…</div> par :
+
+        <iframe class="video-frame"
+                src="https://www.youtube.com/embed/VOTRE_ID_VIDEO"
+                title="Titre de la vidéo"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen></iframe>
+
+        VOTRE_ID_VIDEO est la partie après "v=" dans l'URL YouTube
+        (ex : https://www.youtube.com/watch?v=ABCD1234 → ABCD1234)
+      -->
+
+      <article class="video-card">
+        <div class="video-empty">Interview à venir<br>— déposez le lien YouTube ici —</div>
+        <div class="video-body">
+          <h3>Entretien avec Abdoulaye Diallo</h3>
+          <p>Emplacement réservé pour une interview du Berger dans son atelier, Le Penc.</p>
+        </div>
+      </article>
+
+      <article class="video-card">
+        <div class="video-empty">Reportage à venir<br>— déposez le lien YouTube ici —</div>
+        <div class="video-body">
+          <h3>Reportage — l'île de Ngor</h3>
+          <p>Emplacement réservé pour un reportage sur l'île et son atelier.</p>
+        </div>
+      </article>
+
+      <article class="video-card">
+        <div class="video-empty">Témoignage à venir<br>— déposez le lien YouTube ici —</div>
+        <div class="video-body">
+          <h3>Témoignage d'un proche</h3>
+          <p>Emplacement réservé pour un témoignage vidéo.</p>
+        </div>
+      </article>
+
+      <article class="video-card">
+        <div class="video-empty">Vidéo à venir<br>— déposez le lien YouTube ici —</div>
+        <div class="video-body">
+          <h3>Exposition « Quelle humanité pour demain ? »</h3>
+          <p>Emplacement réservé pour des images de l'exposition de 2017 ou 2018.</p>
+        </div>
+      </article>
+
+    </div>
+
+    <div class="note-box">
+      <strong>Note pour l'administrateur du site :</strong> ouvrez <code>videos.html</code> dans un éditeur de texte, repérez le commentaire d'instructions au-dessus des cartes vidéo, puis remplacez chaque bloc <code>video-empty</code> par un lecteur YouTube intégré (voir modèle dans le commentaire). Vous pouvez aussi renommer les titres et descriptions de chaque carte.
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container">
+    <div>
+      <span class="brand-name" style="font-family:var(--font-display);font-size:1.05rem;">Abdoulaye Diallo</span>
+      <p style="margin-top:6px;max-width:36ch;">Site hommage au Berger de l'île de Ngor — écrivain, artiste-peintre, sage.</p>
+    </div>
+    <ul class="footer-links">
+      <li><a href="index.html">Accueil</a></li>
+      <li><a href="biographie.html">Biographie</a></li>
+      <li><a href="oeuvres.html">Œuvres</a></li>
+      <li><a href="videos.html">Vidéos</a></li>
+    </ul>
+    <p class="footer-note">Île de Ngor, Dakar, Sénégal — en hommage à Abdoulaye Diallo</p>
+    <p class="footer-note" style="margin-top:6px;">Conçu par Babacar NJ. FAYE</p>
+  </div>
+</footer>
+
+</body>
+</html>

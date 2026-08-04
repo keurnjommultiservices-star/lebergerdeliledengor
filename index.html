@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Abdoulaye Diallo — Le Berger de l'île de Ngor</title>
+<meta name="description" content="Site hommage à Abdoulaye Diallo, écrivain et artiste-peintre sénégalais, le Berger de l'île de Ngor.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,500&family=Work+Sans:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<nav class="site-nav">
+  <div class="container">
+    <a href="index.html" class="brand">
+      <span class="brand-name">Abdoulaye Diallo</span>
+      <span class="brand-tag">Le Berger de l'île de Ngor</span>
+    </a>
+    <button class="nav-toggle" aria-label="Ouvrir le menu" aria-expanded="false" onclick="document.querySelector('.nav-links').classList.toggle('open'); this.setAttribute('aria-expanded', this.getAttribute('aria-expanded')==='false')">☰</button>
+    <ul class="nav-links">
+      <li><a href="index.html" class="active">Accueil</a></li>
+      <li><a href="biographie.html">Biographie</a></li>
+      <li><a href="oeuvres.html">Œuvres</a></li>
+      <li><a href="videos.html">Vidéos</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="container">
+    <div class="hero-text">
+      <span class="eyebrow">Site hommage</span>
+      <h1>Abdoulaye<br><em>Diallo</em></h1>
+      <span class="hero-dates">25 décembre 1952 — l'île de Ngor</span>
+      <p class="hero-sub">Écrivain et artiste-peintre sénégalais, connu de tous sous le nom de « Berger de l'île de Ngor ». Ingénieur devenu peintre à 60 ans, il a consacré douze années à une œuvre habitée par une question : quelle humanité pour demain ?</p>
+      <div class="hero-cta">
+        <a href="biographie.html" class="btn btn-primary">Découvrir sa vie</a>
+        <a href="oeuvres.html" class="btn btn-ghost">Voir ses œuvres</a>
+      </div>
+    </div>
+    <div class="hero-portrait">
+      <div class="frame">
+        <img src="assets/portrait.jpg" alt="Portrait d'Abdoulaye Diallo, le Berger de l'île de Ngor">
+      </div>
+      <p class="caption">Abdoulaye Diallo, sur l'île de Ngor</p>
+    </div>
+  </div>
+
+  <!-- signature: horizon / sun motif, evoking Ngor's ocean sunsets -->
+  <svg class="horizon-sun" viewBox="0 0 1180 90" width="100%" height="90" preserveAspectRatio="none" aria-hidden="true">
+    <path d="M0,70 C 180,20 340,85 590,45 C 840,5 1000,80 1180,50 L1180,90 L0,90 Z" fill="#F2E6C9" opacity="0.06"></path>
+    <path d="M0,78 C 200,55 380,90 600,60 C 820,30 980,88 1180,65 L1180,90 L0,90 Z" fill="#FBF6E9"></path>
+  </svg>
+</header>
+
+<section class="section-light">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Un tournant tardif</span>
+      <h2>D'ingénieur à peintre du monde</h2>
+      <p>Après une carrière dans les télécommunications, le Berger découvre la peinture à 60 ans — une vocation tardive qui marquera profondément la scène artistique sénégalaise.</p>
+    </div>
+    <div class="facts">
+      <div class="fact">
+        <div class="fact-num">60 ans</div>
+        <div class="fact-label">Âge auquel il se consacre à la peinture, le 30 décembre 2011</div>
+      </div>
+      <div class="fact">
+        <div class="fact-num">12 ans</div>
+        <div class="fact-label">Une vocation intense, jusqu'à sa disparition</div>
+      </div>
+      <div class="fact">
+        <div class="fact-num">Musée de l'Homme</div>
+        <div class="fact-label">Paris — « Hommage à Frobenius 2 » exposée aux côtés de Jackson Pollock, 2023–2024</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section-dark">
+  <div class="container">
+    <div class="quote-block">
+      <blockquote>« La mère est au début et à la fin de tout. »</blockquote>
+      <cite>Abdoulaye Diallo — Biennale de Dakar, mai 2022</cite>
+    </div>
+  </div>
+</section>
+
+<section class="section-sand">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Le Penc</span>
+      <h2>Une maison-atelier ouverte sur l'art</h2>
+      <p>Sur la deuxième plage de l'île de Ngor, « Le Penc » était entièrement dédié à l'art — peinture, littérature, cinéma — et devenu un lieu incontournable. Plus qu'un peintre, Diallo était considéré comme un sage, dont chaque parole invitait à la réflexion.</p>
+    </div>
+
+    <div class="explore-grid">
+      <a class="explore-card" href="biographie.html">
+        <span class="tag">Parcours</span>
+        <h3>Biographie</h3>
+        <p>De l'ingénieur ECE Paris au sage de Ngor : une vie racontée en dates et en tournants.</p>
+        <span class="arrow">Lire la biographie →</span>
+      </a>
+      <a class="explore-card" href="oeuvres.html">
+        <span class="tag">Galerie</span>
+        <h3>Œuvres</h3>
+        <p>Grands formats, femmes et figures universelles : les toiles majeures du Berger.</p>
+        <span class="arrow">Voir la galerie →</span>
+      </a>
+      <a class="explore-card" href="videos.html">
+        <span class="tag">Archives</span>
+        <h3>Vidéos & interviews</h3>
+        <p>Entretiens et témoignages filmés, pour entendre sa voix et celle de ses proches.</p>
+        <span class="arrow">Regarder →</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container">
+    <div>
+      <span class="brand-name" style="font-family:var(--font-display);font-size:1.05rem;">Abdoulaye Diallo</span>
+      <p style="margin-top:6px;max-width:36ch;">Site hommage au Berger de l'île de Ngor — écrivain, artiste-peintre, sage.</p>
+    </div>
+    <ul class="footer-links">
+      <li><a href="index.html">Accueil</a></li>
+      <li><a href="biographie.html">Biographie</a></li>
+      <li><a href="oeuvres.html">Œuvres</a></li>
+      <li><a href="videos.html">Vidéos</a></li>
+    </ul>
+    <p class="footer-note">Île de Ngor, Dakar, Sénégal — en hommage à Abdoulaye Diallo</p>
+    <p class="footer-note" style="margin-top:6px;">Conçu par Babacar NJ. FAYE</p>
+  </div>
+</footer>
+
+</body>
+</html>
