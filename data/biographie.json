@@ -55,14 +55,43 @@
   "penc_text": "Plus qu'un peintre, Diallo était considéré comme un sage, dont chaque parole invitait à la réflexion. La question « Quelle humanité pour demain ? » a hanté toute son œuvre.",
   "femme_text": "La figure féminine traverse une grande partie de son œuvre. Il défendait l'idée qu'investir dans l'éducation des enfants et dans la place de la femme était essentiel à l'avenir de la nation, la mère étant selon lui « au début et à la fin de tout ».",
   "biblio": [
-    { "year": "", "text": "La fille du volcan : l'Île de Ngor, préfacé par Abdoulaye Wade" },
-    { "year": "", "text": "La face cachée de notre démocratie, en hommage à Me Babacar Niang, préfacé par le Pr Amadou Mahtar Mbow, ancien Directeur Général de l'UNESCO" },
-    { "year": "", "text": "Changer de Regard" },
-    { "year": "", "text": "Sénégal 2012, le temps du peuple (octobre 2009)" },
-    { "year": "2021", "text": "Quelle humanité pour demain ? — L'Harmattan" },
-    { "year": "2021", "text": "Femmes — mères de l'humanité — L'Harmattan" },
-    { "year": "2021", "text": "Les figures emblématiques des indépendances et de la démocratie sénégalaise — L'Harmattan" },
-    { "year": "2021", "text": "L'Afrique face aux défis politiques, démocratiques et technologiques — L'Harmattan" },
-    { "year": "2021", "text": "Art rupestre et contemporanéité — L'Harmattan" }
-  ]
+    {
+      "year": "",
+      "text": "La fille du volcan : l'Île de Ngor, préfacé par Abdoulaye Wade"
+    },
+    {
+      "year": "",
+      "text": "La face cachée de notre démocratie, en hommage à Me Babacar Niang, préfacé par le Pr Amadou Mahtar Mbow, ancien Directeur Général de l'UNESCO"
+    },
+    {
+      "year": "",
+      "text": "Changer de Regard"
+    },
+    {
+      "year": "",
+      "text": "Sénégal 2012, le temps du peuple (octobre 2009)"
+    },
+    {
+      "year": "2021",
+      "text": "Quelle humanité pour demain ? — L'Harmattan"
+    },
+    {
+      "year": "2021",
+      "text": "Femmes — mères de l'humanité — L'Harmattan"
+    },
+    {
+      "year": "2021",
+      "text": "Les figures emblématiques des indépendances et de la démocratie sénégalaise — L'Harmattan"
+    },
+    {
+      "year": "2021",
+      "text": "L'Afrique face aux défis politiques, démocratiques et technologiques — L'Harmattan"
+    },
+    {
+      "year": "2021",
+      "text": "Art rupestre et contemporanéité — L'Harmattan"
+    }
+  ],
+  "penc_image_left": "",
+  "penc_image_right": ""
 }

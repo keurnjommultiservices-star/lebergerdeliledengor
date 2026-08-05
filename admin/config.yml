@@ -50,6 +50,8 @@ collections:
               - { label: "Texte", name: "text", widget: "text" }
           - { label: "Le Penc — chapô", name: "penc_lede", widget: "text" }
           - { label: "Le Penc — texte", name: "penc_text", widget: "text" }
+          - { label: "Le Penc — photo de gauche", name: "penc_image_left", widget: "image", required: false }
+          - { label: "Le Penc — photo de droite", name: "penc_image_right", widget: "image", required: false }
           - { label: "La femme, muse centrale — texte", name: "femme_text", widget: "text" }
           - label: "Bibliographie"
             name: "biblio"

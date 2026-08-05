@@ -85,6 +85,12 @@ async function renderBiographie() {
   set("penc-text-bio", esc(data.penc_text));
   set("femme-text", esc(data.femme_text));
 
+  const imgHTML = (url, palette, alt) => url
+    ? `<img src="${esc(url)}" alt="${esc(alt)}">`
+    : `<div class="canvas-${esc(palette)}" style="width:100%;height:100%;"></div>`;
+  set("penc-image-left", imgHTML(data.penc_image_left, "ochre", "Le Penc — l'atelier d'Abdoulaye Diallo"));
+  set("penc-image-right", imgHTML(data.penc_image_right, "teal", "Le Penc — l'atelier d'Abdoulaye Diallo"));
+
   const biblio = document.getElementById("biblio");
   if (biblio && Array.isArray(data.biblio)) {
     biblio.innerHTML = data.biblio.map(item => `
