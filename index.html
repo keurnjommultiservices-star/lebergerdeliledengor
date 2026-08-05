@@ -39,6 +39,10 @@
 </nav>
 
 <header class="hero">
+  <div class="hero-bg-scroll" aria-hidden="true">
+    <div class="hero-bg-track" id="hero-bg-track"></div>
+  </div>
+  <div class="hero-bg-overlay" aria-hidden="true"></div>
   <div class="container">
     <div class="hero-text">
       <span class="eyebrow">Site hommage</span>
@@ -147,6 +151,6 @@
 </footer>
 
 <script src="assets/js/render.js"></script>
-<script>renderSite();</script>
+<script>renderSite(); renderHeroGallery();</script>
 </body>
 </html>

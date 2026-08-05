@@ -82,6 +82,12 @@ collections:
                 default: "ochre"
               - { label: "Grand format (occupe plus de place)", name: "wide", widget: "boolean", default: false, required: false }
               - { label: "Photo de l'œuvre (facultatif)", name: "image", widget: "image", required: false }
+              - label: "Faire défiler la description sur la photo"
+                name: "show_ticker"
+                widget: "boolean"
+                default: false
+                required: false
+                hint: "Si activé, le texte de la description ci-dessus défile en bandeau par-dessus la photo, comme un ticker d'actualités."
 
   # ---------- Vidéos ----------
   - name: "videos"

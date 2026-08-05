@@ -1,139 +1,207 @@
-/* ============================================================
-   Abdoulaye Diallo — rendu du contenu depuis /data/*.json
-   Permet à l'espace admin (/admin) de modifier le site
-   sans toucher au code HTML.
-   ============================================================ */
-
-async function loadJSON(path) {
-  try {
-    const res = await fetch(path, { cache: "no-store" });
-    if (!res.ok) throw new Error(res.status);
-    return await res.json();
-  } catch (e) {
-    console.warn("Impossible de charger", path, e);
-    return null;
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Biographie — Abdoulaye Diallo</title>
+<meta name="description" content="Biographie d'Abdoulaye Diallo, le Berger de l'île de Ngor : de l'ingénieur des télécommunications au peintre du Musée de l'Homme.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,500&family=Work+Sans:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<script defer src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+<script>
+  // Capte les liens d'invitation / réinitialisation de mot de passe Netlify Identity
+  if (window.netlifyIdentity) {
+    window.netlifyIdentity.on("init", user => {});
+  } else {
+    window.addEventListener("DOMContentLoaded", () => {
+      if (window.netlifyIdentity) window.netlifyIdentity.on("init", user => {});
+    });
   }
-}
+</script>
+</head>
+<body>
 
-function esc(str) {
-  const div = document.createElement("div");
-  div.textContent = str == null ? "" : str;
-  return div.innerHTML;
-}
+<nav class="site-nav">
+  <div class="container">
+    <a href="index.html" class="brand">
+      <span class="brand-name">Abdoulaye Diallo</span>
+      <span class="brand-tag">Le Berger de l'île de Ngor</span>
+    </a>
+    <button class="nav-toggle" aria-label="Ouvrir le menu" aria-expanded="false" onclick="document.querySelector('.nav-links').classList.toggle('open'); this.setAttribute('aria-expanded', this.getAttribute('aria-expanded')==='false')">☰</button>
+    <ul class="nav-links">
+      <li><a href="index.html">Accueil</a></li>
+      <li><a href="biographie.html" class="active">Biographie</a></li>
+      <li><a href="oeuvres.html">Œuvres</a></li>
+      <li><a href="videos.html">Vidéos</a></li>
+    </ul>
+  </div>
+</nav>
 
-/* -------------------- Accueil -------------------- */
-async function renderSite() {
-  const data = await loadJSON("data/site.json");
-  if (!data) return;
+<header class="hero" style="padding-bottom:0;">
+  <div class="container" style="grid-template-columns:1fr; text-align:center; padding-bottom:50px;">
+    <div>
+      <span class="eyebrow">Biographie</span>
+      <h1 style="font-size:clamp(2.2rem,4.6vw,3.4rem);">Une vie en deux actes</h1>
+      <p class="hero-sub" style="margin:0 auto;">L'ingénieur des télécommunications et le peintre du sacré n'étaient qu'un seul homme : Abdoulaye Diallo, le Berger de l'île de Ngor.</p>
+    </div>
+  </div>
+  <svg class="horizon-sun" viewBox="0 0 1180 90" width="100%" height="90" preserveAspectRatio="none" aria-hidden="true">
+    <path d="M0,78 C 200,55 380,90 600,60 C 820,30 980,88 1180,65 L1180,90 L0,90 Z" fill="#FBF6E9"></path>
+  </svg>
+</header>
 
-  const set = (id, html) => { const el = document.getElementById(id); if (el) el.innerHTML = html; };
+<section class="section-light">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Parcours</span>
+      <h2>Chronologie</h2>
+    </div>
 
-  set("hero-title", `${esc(data.title_line1)}<br><em>${esc(data.title_emphasis)}</em>`);
-  set("hero-dates", esc(data.dates));
-  set("hero-subtitle", esc(data.subtitle));
-
-  set("fact1-num", esc(data.fact1_num));
-  set("fact1-label", esc(data.fact1_label));
-  set("fact2-num", esc(data.fact2_num));
-  set("fact2-label", esc(data.fact2_label));
-  set("fact3-num", esc(data.fact3_num));
-  set("fact3-label", esc(data.fact3_label));
-
-  set("quote-text", `« ${esc(data.quote_text)} »`);
-  set("quote-cite", esc(data.quote_cite));
-  set("penc-text", esc(data.penc_text));
-}
-
-/* -------------------- Biographie -------------------- */
-async function renderBiographie() {
-  const data = await loadJSON("data/biographie.json");
-  if (!data) return;
-
-  const tl = document.getElementById("timeline");
-  if (tl && Array.isArray(data.timeline)) {
-    tl.innerHTML = data.timeline.map(item => `
+    <div class="timeline" id="timeline">
       <div class="tl-item">
-        <span class="tl-year">${esc(item.year)}</span>
-        <h3>${esc(item.title)}</h3>
-        <p>${esc(item.text)}</p>
+        <span class="tl-year">25 décembre 1952</span>
+        <h3>Naissance à Dakar</h3>
+        <p>Abdoulaye Diallo naît à Dakar. Il devient ingénieur ECE Paris, option électronique, spécialiste des télécommunications.</p>
       </div>
-    `).join("");
-  }
 
-  const set = (id, html) => { const el = document.getElementById(id); if (el) el.innerHTML = html; };
-  set("penc-lede", esc(data.penc_lede));
-  set("penc-text-bio", esc(data.penc_text));
-  set("femme-text", esc(data.femme_text));
+      <div class="tl-item">
+        <span class="tl-year">Carrière d'ingénieur</span>
+        <h3>Président d'un groupe de fibre optique</h3>
+        <p>Il dirige un groupe spécialisé dans la construction de réseaux à fibres optiques, avant de se tourner vers l'engagement associatif et, plus tard, vers l'art.</p>
+      </div>
 
-  const biblio = document.getElementById("biblio");
-  if (biblio && Array.isArray(data.biblio)) {
-    biblio.innerHTML = data.biblio.map(item => `
+      <div class="tl-item">
+        <span class="tl-year">Depuis 2000</span>
+        <h3>Président de l'AAIN</h3>
+        <p>Il préside l'Association des Amis de l'île de Ngor (AAIN), de sa création en 2000 jusqu'en 2020. Il co-fonde également avec France Gall l'association « Les Amis de Ngor », engagée dans la lutte contre la prostitution sur l'île.</p>
+      </div>
+
+      <div class="tl-item">
+        <span class="tl-year">Depuis octobre 2010</span>
+        <h3>Secrétaire Général, Club Convergences Plurielles</h3>
+        <p>Il occupe également la fonction de Vice-président du Mouvement Alternative Citoyenne / ANDU-NAWLÉ.</p>
+      </div>
+
+      <div class="tl-item">
+        <span class="tl-year">30 décembre 2011</span>
+        <h3>Le tournant vers la peinture</h3>
+        <p>À 60 ans, après une brillante carrière d'ingénieur, le Berger découvre l'art plastique. Une vocation qui durera douze ans, jusqu'à sa disparition — consacrée notamment aux femmes et à de grandes figures mondiales comme Nelson Mandela ou Leo Frobenius.</p>
+      </div>
+
+      <div class="tl-item">
+        <span class="tl-year">2017</span>
+        <h3>« Quelle humanité pour demain ? » — l'île de Ngor</h3>
+        <p>Exposition marquante portée par une toile monumentale (7,9 m × 2,45 m) en triptyque : la mondialisation et ses conséquences climatiques, la colère face aux travers de l'humanité, puis une issue fondée sur la paix, le pardon et le partage — inspirée des frontons des universités musulmanes d'Espagne.</p>
+      </div>
+
+      <div class="tl-item">
+        <span class="tl-year">Mai–juillet 2018</span>
+        <h3>Bibliothèque universitaire Cheikh Anta Diop</h3>
+        <p>Exposition sous le thème « Quelle humanité pour demain ? », qui accueille 4 800 visiteurs, hors élèves et étudiants d'autres écoles.</p>
+      </div>
+
+      <div class="tl-item">
+        <span class="tl-year">2021</span>
+        <h3>Une série d'ouvrages chez L'Harmattan</h3>
+        <p>Coordonnés par les Pr Magueye Kassé et Pr Ibrahima Silla : <em>Quelle humanité pour demain ?</em>, <em>Femmes — mères de l'humanité</em>, <em>Les figures emblématiques des indépendances et de la démocratie sénégalaise</em>, <em>L'Afrique face aux défis politiques, démocratiques et technologiques</em>, <em>Art rupestre et contemporanéité</em>.</p>
+      </div>
+
+      <div class="tl-item">
+        <span class="tl-year">Mai 2022</span>
+        <h3>Biennale de Dakar — « I Ndaffa »</h3>
+        <p>Il présente quatre toiles dédiées à la femme et à la fille dans le cadre de l'exposition <em>Taxawaalu</em>, inspirée de l'histoire de la princesse peule Fatimata Baba Lobo, contée par la styliste Oumou Sy. Il y défend l'idée qu'investir dans l'éducation des enfants et la place de la femme est essentiel à l'avenir de la nation.</p>
+      </div>
+
+      <div class="tl-item">
+        <span class="tl-year">17 nov. 2023 – 20 mai 2024</span>
+        <h3>Musée de l'Homme, Paris</h3>
+        <p>Son œuvre <em>Hommage à Frobenius 2</em> y est exposée aux côtés de créations de Jackson Pollock. C'est Leo Frobenius — auteur d'un recensement de 6 000 peintures rupestres à travers le monde — qui lui ouvre les portes de ce musée. Le Pr Magueye Kassé, commissaire permanent de l'artiste, y salue la reconnaissance de l'art africain et la manière dont Diallo prolonge le travail de Frobenius sur les liens millénaires entre l'Afrique et le monde à travers l'art rupestre.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section-sand">
+  <div class="container prose">
+    <div class="section-head" style="margin-bottom:36px;">
+      <span class="eyebrow">Le Penc</span>
+      <h2>Lieu de vie et de pensée</h2>
+    </div>
+    <p class="lede" id="penc-lede">Sa maison-atelier, « Le Penc », sur la deuxième plage de l'île de Ngor, était entièrement dédiée à l'art — peinture, littérature, cinéma — et devenue un lieu incontournable pour les amateurs d'art.</p>
+    <p id="penc-text-bio">Plus qu'un peintre, Diallo était considéré comme un sage, dont chaque parole invitait à la réflexion. La question « Quelle humanité pour demain ? » a hanté toute son œuvre.</p>
+
+    <h3>La femme, muse centrale</h3>
+    <p id="femme-text">La figure féminine traverse une grande partie de son œuvre. Il défendait l'idée qu'investir dans l'éducation des enfants et dans la place de la femme était essentiel à l'avenir de la nation, la mère étant selon lui « au début et à la fin de tout ».</p>
+  </div>
+</section>
+
+<section class="section-light">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Bibliographie</span>
+      <h2>Œuvres publiées</h2>
+      <p>Abdoulaye Diallo est l'auteur de plusieurs livres.</p>
+    </div>
+    <ul class="biblio" id="biblio">
       <li>
-        <span class="biblio-mark">${item.year ? esc(item.year) : "—"}</span>
-        <span class="biblio-text">${esc(item.text)}</span>
+        <span class="biblio-mark">—</span>
+        <span class="biblio-text"><em>La fille du volcan : l'Île de Ngor</em>, préfacé par Abdoulaye Wade</span>
       </li>
-    `).join("");
-  }
-}
+      <li>
+        <span class="biblio-mark">—</span>
+        <span class="biblio-text"><em>La face cachée de notre démocratie</em>, en hommage à Me Babacar Niang, préfacé par le Pr Amadou Mahtar Mbow, ancien Directeur Général de l'UNESCO</span>
+      </li>
+      <li>
+        <span class="biblio-mark">—</span>
+        <span class="biblio-text"><em>Changer de Regard</em></span>
+      </li>
+      <li>
+        <span class="biblio-mark">—</span>
+        <span class="biblio-text"><em>Sénégal 2012, le temps du peuple</em> (octobre 2009)</span>
+      </li>
+      <li>
+        <span class="biblio-mark">2021</span>
+        <span class="biblio-text"><em>Quelle humanité pour demain ?</em> — L'Harmattan</span>
+      </li>
+      <li>
+        <span class="biblio-mark">2021</span>
+        <span class="biblio-text"><em>Femmes — mères de l'humanité</em> — L'Harmattan</span>
+      </li>
+      <li>
+        <span class="biblio-mark">2021</span>
+        <span class="biblio-text"><em>Les figures emblématiques des indépendances et de la démocratie sénégalaise</em> — L'Harmattan</span>
+      </li>
+      <li>
+        <span class="biblio-mark">2021</span>
+        <span class="biblio-text"><em>L'Afrique face aux défis politiques, démocratiques et technologiques</em> — L'Harmattan</span>
+      </li>
+      <li>
+        <span class="biblio-mark">2021</span>
+        <span class="biblio-text"><em>Art rupestre et contemporanéité</em> — L'Harmattan</span>
+      </li>
+    </ul>
+  </div>
+</section>
 
-/* -------------------- Œuvres -------------------- */
-async function renderOeuvres() {
-  const data = await loadJSON("data/oeuvres.json");
-  if (!data || !Array.isArray(data.artworks)) return;
+<footer class="site-footer">
+  <div class="container">
+    <div>
+      <span class="brand-name" style="font-family:var(--font-display);font-size:1.05rem;">Abdoulaye Diallo</span>
+      <p style="margin-top:6px;max-width:36ch;">Site hommage au Berger de l'île de Ngor — écrivain, artiste-peintre, sage.</p>
+    </div>
+    <ul class="footer-links">
+      <li><a href="index.html">Accueil</a></li>
+      <li><a href="biographie.html">Biographie</a></li>
+      <li><a href="oeuvres.html">Œuvres</a></li>
+      <li><a href="videos.html">Vidéos</a></li>
+    </ul>
+    <p class="footer-note">Île de Ngor, Dakar, Sénégal — en hommage à Abdoulaye Diallo</p>
+    <p class="footer-note" style="margin-top:6px;">Conçu par Babacar NJ. FAYE</p>
+  </div>
+</footer>
 
-  const feature = document.getElementById("gallery-feature");
-  const rest = document.getElementById("gallery-rest");
-  if (!feature || !rest) return;
-
-  const cardHTML = (a) => {
-    const canvas = a.image
-      ? `<img src="${esc(a.image)}" alt="${esc(a.title)}">`
-      : "";
-    const paletteClass = a.image ? "" : `canvas-${esc(a.palette || "ochre")}`;
-    const tickerContent = a.show_ticker ? a.description : "";
-    const dur = tickerContent ? Math.max(10, tickerContent.length * 0.16).toFixed(1) : 0;
-    const ticker = tickerContent
-      ? `<div class="ticker"><span style="animation-duration:${dur}s">${esc(tickerContent)}</span></div>`
-      : "";
-    return `
-      <article class="artwork${a.wide ? " wide" : ""}">
-        <div class="artwork-canvas ${paletteClass}">${canvas}${ticker}</div>
-        <div class="artwork-body">
-          <span class="tag">${esc(a.tag)}</span>
-          <h3>${esc(a.title)}</h3>
-          <p>${esc(a.description)}</p>
-        </div>
-      </article>
-    `;
-  };
-
-  const featured = data.artworks.filter(a => a.wide);
-  const others = data.artworks.filter(a => !a.wide);
-
-  feature.innerHTML = (featured.length ? featured : data.artworks.slice(0, 2)).map(cardHTML).join("");
-  rest.innerHTML = (featured.length ? others : data.artworks.slice(2)).map(cardHTML).join("");
-}
-
-/* -------------------- Vidéos -------------------- */
-async function renderVideos() {
-  const data = await loadJSON("data/videos.json");
-  if (!data || !Array.isArray(data.videos)) return;
-
-  const grid = document.getElementById("video-grid");
-  if (!grid) return;
-
-  grid.innerHTML = data.videos.map(v => {
-    const media = v.youtube_id
-      ? `<iframe class="video-frame" src="https://www.youtube.com/embed/${esc(v.youtube_id)}" title="${esc(v.title)}" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`
-      : `<div class="video-empty">Vidéo à venir<br>— ajoutez le lien depuis /admin —</div>`;
-    return `
-      <article class="video-card">
-        ${media}
-        <div class="video-body">
-          <h3>${esc(v.title)}</h3>
-          <p>${esc(v.description)}</p>
-        </div>
-      </article>
-    `;
-  }).join("");
-}
+<script src="assets/js/render.js"></script>
+<script>renderBiographie();</script>
+</body>
+</html>

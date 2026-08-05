@@ -44,7 +44,27 @@ async function renderSite() {
   set("penc-text", esc(data.penc_text));
 }
 
-/* -------------------- Biographie -------------------- */
+/* -------------------- Fond défilant (accueil) -------------------- */
+async function renderHeroGallery() {
+  const data = await loadJSON("data/oeuvres.json");
+  const track = document.getElementById("hero-bg-track");
+  if (!track) return;
+
+  let artworks = (data && Array.isArray(data.artworks)) ? data.artworks : [];
+  if (!artworks.length) return;
+
+  const thumbHTML = (a) => {
+    if (a.image) {
+      return `<div class="thumb"><img src="${esc(a.image)}" alt="${esc(a.title)}" loading="lazy"></div>`;
+    }
+    return `<div class="thumb placeholder canvas-${esc(a.palette || "ochre")}" title="${esc(a.title)}"></div>`;
+  };
+
+  // dupliquée pour un défilement en boucle continue et sans coupure
+  const once = artworks.map(thumbHTML).join("");
+  track.innerHTML = once + once;
+}
+
 async function renderBiographie() {
   const data = await loadJSON("data/biographie.json");
   if (!data) return;
@@ -90,9 +110,14 @@ async function renderOeuvres() {
       ? `<img src="${esc(a.image)}" alt="${esc(a.title)}">`
       : "";
     const paletteClass = a.image ? "" : `canvas-${esc(a.palette || "ochre")}`;
+    const tickerContent = a.show_ticker ? a.description : "";
+    const dur = tickerContent ? Math.max(10, tickerContent.length * 0.16).toFixed(1) : 0;
+    const ticker = tickerContent
+      ? `<div class="ticker"><span style="animation-duration:${dur}s">${esc(tickerContent)}</span></div>`
+      : "";
     return `
       <article class="artwork${a.wide ? " wide" : ""}">
-        <div class="artwork-canvas ${paletteClass}">${canvas}</div>
+        <div class="artwork-canvas ${paletteClass}">${canvas}${ticker}</div>
         <div class="artwork-body">
           <span class="tag">${esc(a.tag)}</span>
           <h3>${esc(a.title)}</h3>

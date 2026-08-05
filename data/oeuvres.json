@@ -6,7 +6,8 @@
       "description": "Exposée au Musée de l'Homme, Paris, du 17 novembre 2023 au 20 mai 2024, aux côtés de créations de Jackson Pollock. Un dialogue avec l'art rupestre recensé par Leo Frobenius.",
       "palette": "ochre",
       "wide": true,
-      "image": ""
+      "image": "",
+      "show_ticker": false
     },
     {
       "tag": "Grand format",
@@ -14,7 +15,8 @@
       "description": "Portraits et hommages consacrés à de grandes figures mondiales, dont Nelson Mandela — des toiles de grand format, au cœur de son œuvre.",
       "palette": "teal",
       "wide": false,
-      "image": ""
+      "image": "",
+      "show_ticker": false
     },
     {
       "tag": "2017 · Triptyque, panneau I",
@@ -22,7 +24,8 @@
       "description": "Premier panneau du triptyque monumental (7,9 m × 2,45 m) : la mondialisation et ses conséquences climatiques.",
       "palette": "ocean",
       "wide": false,
-      "image": ""
+      "image": "",
+      "show_ticker": false
     },
     {
       "tag": "2017 · Triptyque, panneau II",
@@ -30,7 +33,8 @@
       "description": "Deuxième panneau : la colère face aux travers de l'humanité.",
       "palette": "coral",
       "wide": false,
-      "image": ""
+      "image": "",
+      "show_ticker": false
     },
     {
       "tag": "2017 · Triptyque, panneau III",
@@ -38,7 +42,8 @@
       "description": "Troisième panneau : une issue fondée sur la paix, le pardon et le partage, inspirée des frontons des universités musulmanes d'Espagne. Présenté à l'île de Ngor.",
       "palette": "teal",
       "wide": false,
-      "image": ""
+      "image": "",
+      "show_ticker": false
     },
     {
       "tag": "Mai 2022 · Biennale de Dakar",
@@ -46,7 +51,8 @@
       "description": "L'une des quatre toiles dédiées à la femme et à la fille, exposition « I Ndaffa », inspirée de l'histoire de la princesse peule Fatimata Baba Lobo.",
       "palette": "coral",
       "wide": false,
-      "image": ""
+      "image": "",
+      "show_ticker": false
     },
     {
       "tag": "Mai 2022 · Biennale de Dakar",
@@ -54,7 +60,8 @@
       "description": "« Investir dans l'éducation des enfants et dans la place de la femme est essentiel à l'avenir de la nation » — la mère, muse centrale de son œuvre.",
       "palette": "ocean",
       "wide": false,
-      "image": ""
+      "image": "",
+      "show_ticker": false
     }
   ]
 }
