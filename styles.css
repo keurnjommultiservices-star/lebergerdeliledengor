@@ -530,6 +530,8 @@ body.home .home-hero .container:first-child{
   gap:44px;
   align-items:center;
 }
+body.home .home-hero h1{ color:var(--paper); }
+body.home .home-hero h1 em{ font-style:italic; color:var(--ochre); }
 @media (max-width:900px){
   body.home .home-hero .container:first-child{ grid-template-columns:1fr; text-align:center; }
   body.home .hero-portrait{ order:-1; margin:0 auto; }
@@ -540,7 +542,7 @@ body.home .hero-sub{ font-size:1.02rem; margin-bottom:1.1em; }
 body.home .eyebrow{ margin-bottom:10px; }
 body.home .hero-dates{ margin-bottom:1em; }
 body.home .facts-compact{ margin-top:0; gap:20px; }
-body.home .facts-compact .fact-num{ font-size:1.9rem; }
-body.home .facts-compact .fact-label{ font-size:.76rem; }
+body.home .facts-compact .fact-num{ color:var(--paper); font-size:1.9rem; }
+body.home .facts-compact .fact-label{ color:var(--sand-deep); font-size:.76rem; }
 body.home .site-footer{ flex:0 0 auto; padding:26px 0 16px; }
 body.home .site-footer .footer-note{ margin-top:18px; }
