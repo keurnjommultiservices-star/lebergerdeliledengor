@@ -133,42 +133,13 @@ a:focus-visible,button:focus-visible{
    HERO
    ============================================================ */
 .hero{
-  background:var(--ocean-deep);
+  background:
+    radial-gradient(circle at 78% 18%, rgba(204,138,46,0.35), transparent 45%),
+    linear-gradient(165deg, var(--ocean) 0%, var(--ocean-deep) 78%);
   color:var(--paper);
   position:relative;
   overflow:hidden;
   padding:72px 0 0;
-}
-
-/* scrolling background strip of artworks, behind the hero content */
-.hero-bg-scroll{
-  position:absolute; inset:0; z-index:0;
-  overflow:hidden;
-}
-.hero-bg-track{
-  display:flex;
-  gap:16px;
-  width:max-content;
-  height:100%;
-  animation:hero-scroll 55s linear infinite;
-}
-.hero-bg-track .thumb{
-  flex:0 0 auto;
-  width:230px; height:100%;
-  border-radius:2px;
-  overflow:hidden;
-}
-.hero-bg-track .thumb img{ width:100%; height:100%; object-fit:cover; display:block; }
-.hero-bg-track .thumb.placeholder{ width:230px; height:100%; }
-@keyframes hero-scroll{
-  from{ transform:translateX(0); }
-  to{ transform:translateX(-50%); }
-}
-.hero-bg-overlay{
-  position:absolute; inset:0; z-index:1;
-  background:
-    radial-gradient(circle at 78% 18%, rgba(204,138,46,0.28), transparent 45%),
-    linear-gradient(165deg, rgba(20,49,61,0.92) 0%, rgba(11,30,38,0.95) 78%);
 }
 .hero .container{ position:relative; z-index:2; }
 .horizon-sun{ position:relative; z-index:2; }
