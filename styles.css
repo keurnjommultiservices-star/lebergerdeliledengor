@@ -502,3 +502,45 @@ section{ padding:88px 0; }
   font-family:var(--font-mono); font-size:.7rem; color:#6b7f77;
   margin-top:34px; width:100%; text-align:center;
 }
+
+/* ============================================================
+   HOMEPAGE — single-screen layout (hero + facts + footer only)
+   ============================================================ */
+body.home{
+  display:flex;
+  flex-direction:column;
+  min-height:100vh;
+}
+body.home .site-nav{ flex:0 0 auto; }
+body.home .home-hero{
+  flex:1 1 auto;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  gap:28px;
+  background:
+    radial-gradient(circle at 78% 18%, rgba(204,138,46,0.35), transparent 45%),
+    linear-gradient(165deg, var(--ocean) 0%, var(--ocean-deep) 78%);
+  color:var(--paper);
+  padding:32px 0;
+}
+body.home .home-hero .container:first-child{
+  display:grid;
+  grid-template-columns:1.1fr .9fr;
+  gap:44px;
+  align-items:center;
+}
+@media (max-width:900px){
+  body.home .home-hero .container:first-child{ grid-template-columns:1fr; text-align:center; }
+  body.home .hero-portrait{ order:-1; margin:0 auto; }
+}
+body.home .hero-portrait{ width:min(100%, 260px); }
+body.home .hero-text h1{ font-size:clamp(2.1rem, 4.2vw, 3.4rem); margin-bottom:.2em; }
+body.home .hero-sub{ font-size:1.02rem; margin-bottom:1.1em; }
+body.home .eyebrow{ margin-bottom:10px; }
+body.home .hero-dates{ margin-bottom:1em; }
+body.home .facts-compact{ margin-top:0; gap:20px; }
+body.home .facts-compact .fact-num{ font-size:1.9rem; }
+body.home .facts-compact .fact-label{ font-size:.76rem; }
+body.home .site-footer{ flex:0 0 auto; padding:26px 0 16px; }
+body.home .site-footer .footer-note{ margin-top:18px; }
