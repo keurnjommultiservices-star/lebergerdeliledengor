@@ -44,27 +44,6 @@ async function renderSite() {
   set("penc-text", esc(data.penc_text));
 }
 
-/* -------------------- Fond défilant (accueil) -------------------- */
-async function renderHeroGallery() {
-  const data = await loadJSON("data/oeuvres.json");
-  const track = document.getElementById("hero-bg-track");
-  if (!track) return;
-
-  let artworks = (data && Array.isArray(data.artworks)) ? data.artworks : [];
-  if (!artworks.length) return;
-
-  const thumbHTML = (a) => {
-    if (a.image) {
-      return `<div class="thumb"><img src="${esc(a.image)}" alt="${esc(a.title)}" loading="lazy"></div>`;
-    }
-    return `<div class="thumb placeholder canvas-${esc(a.palette || "ochre")}" title="${esc(a.title)}"></div>`;
-  };
-
-  // dupliquée pour un défilement en boucle continue et sans coupure
-  const once = artworks.map(thumbHTML).join("");
-  track.innerHTML = once + once;
-}
-
 async function renderBiographie() {
   const data = await loadJSON("data/biographie.json");
   if (!data) return;
