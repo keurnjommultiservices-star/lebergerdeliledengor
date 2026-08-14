@@ -72,7 +72,16 @@ async function renderBiographie() {
 
   const biblio = document.getElementById("biblio");
   if (biblio && Array.isArray(data.biblio)) {
-    biblio.innerHTML = data.biblio.map(item => `
+    const sorted = [...data.biblio].sort((a, b) => {
+      const ay = parseInt(a.year, 10);
+      const by = parseInt(b.year, 10);
+      const aOk = !isNaN(ay), bOk = !isNaN(by);
+      if (aOk && bOk) return ay - by;
+      if (aOk) return -1;   // les entrées sans année vont à la fin
+      if (bOk) return 1;
+      return 0;
+    });
+    biblio.innerHTML = sorted.map(item => `
       <li>
         <span class="biblio-mark">${item.year ? esc(item.year) : "—"}</span>
         <span class="biblio-text">${esc(item.text)}</span>
